@@ -4,8 +4,8 @@ See original description in [parent (official) repo](https://github.com/docker-l
 
 ## About this fork
 
-This is mainly aimed to add Image based on [Alpine Linux](https://www.alpinelinux.org/) while preserving other configuration workflow (like Env Variables). Current MySQL server version is "10.1.16-MariaDB" - however it's getting built from Alpine Edge apk repo. You can set the requested version in the Dockerfile and rebuild image for your needs.
+This is mainly aimed to add Image based on [Alpine Linux](https://www.alpinelinux.org/) while preserving other configuration workflow (like Env Variables). Look here to get the current MySQL version: https://pkgs.alpinelinux.org/package/v3.4/main/armhf/mariadb 
 
-This repo is **not** build automatically. The Alpine version is available on Docker Hub https://hub.docker.com/r/maketok/mariadb-alpine/.
+You can set the requested version in the Dockerfile and rebuild image for your needs.
 
 All configuration variables are preserved from original Image. See description here: https://hub.docker.com/_/mariadb/
