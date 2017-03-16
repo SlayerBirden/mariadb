@@ -106,7 +106,7 @@ if [ "$1" = 'mysqld' -a -z "$wantHelp" ]; then
 		echo
 		for f in /docker-entrypoint-initdb.d/*; do
 			case "$f" in
-				*.sh)     echo "$0: running $f"; . "$f" ;;
+				*.sh)     echo "$0: running $f"; tr -d '\r' < "$f" > /tmp/"$(basename "$f")"; . /tmp/"$(basename "$f")" ;;
 				*.sql)    echo "$0: running $f"; "${mysql[@]}" < "$f"; echo ;;
 				*.sql.gz) echo "$0: running $f"; gunzip -c "$f" | "${mysql[@]}"; echo ;;
 				*)        echo "$0: ignoring $f" ;;
